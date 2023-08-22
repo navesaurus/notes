@@ -1,0 +1,61 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Welcome to Overleaf --- just edit your LaTeX on the left,
+% and we'll compile it for you on the right. If you open the
+% 'Share' menu, you can invite other users to edit at the same
+% time. See www.overleaf.com/learn for more info. Enjoy!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{report}
+
+\title{Notes taking - Build is ctrl alt b}
+\begin{document}
+\maketitle
+\chapter{Knowledge Graph}
+
+\section{Definition}
+[https://www.ibm.com/topics/knowledge-graph#:~:text=A%20knowledge%20graph%2C%20also%20known,the%20term%20knowledge%20%E2%80%9Cgraph.%E2%80%9D]
+
+A knowledge graph, also known as a semantic network, represents a network of real-world entities—i.e. objects, events, situations, or concepts—and illustrates their relationship. This information is usually stored in a graph database and visualized as a graph structure, prompting the term knowledge “graph.”
+
+\subsection{Ontologies}
+- serves to create a formal representation of the entities in the graph
+- based on a taxonomy (since there are multiple, ontologies has its own definition)
+- Ontology example: Madison Square Garden
+    - distinguish between events at the location using variables such as time
+
+\subsection{how it works}
+- schemas -> Provide the framework for the knowledge graph
+- identities -> classify the underlying nodes appropriately
+- context -> determines the setting in which that knowledge exists
+    - help distinguish words with multiple meanings
+
+- fueled by machine learning, NLP to construct a comperhensive view of nodes, edges and labels through a process called semantic enrichment
+
+
+
+\section{Combining Graph Neural Networks and Sentence Encoders for
+Knowledge-aware Recommendations}
+- first exploited\textbf{ graph neural networks} to encode both \textbf{collaborative features}, such as the interactions between users and items, and structured properties of the items
+- Next, we used a\textbf{ sentence encoder} that relies on transformers to learn a representation based on textual content describing the items. 
+- Finally, these \textbf{embeddings are combined }by \textbf{exploiting a deep neural network }where both \textit{self-attention }and\textit{ cross-attention} mechanisms are used to learn the
+relationships between the initial embeddings and to further refine
+the representation
+
+
+\chapter{Natural Language Processing}
+- Rule based modelling of human language
+\section{Tasks}
+- Speech Recognising
+- Part of speech tagging (whether its a noun or a verb etc. as some words can be both
+- word sense disambiguation (semantic analysis of word)
+- Named entity recognition -> eg. Fred is a name, Germany is a location, etc
+- Co-reference resolution -> 2 words refer to the same entity. eg. Lea = she but could also be a metaphor or idiom
+- Sentiments analysis: attempt to extract subjective quality (sarcasm, confusion)
+- Natural language generation
+
+\section{BERT}
+- train deep bidirectional representation of unlabeled text by joint conditioning on both left and right context in all layers
+
+
+\end{document}
