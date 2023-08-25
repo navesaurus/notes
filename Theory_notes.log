@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.17)  23 AUG 2023 21:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.22)  24 AUG 2023 20:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/UI493216/Downloads/Thesis/notes/Theory_notes
-(c:/Users/UI493216/Downloads/Thesis/notes/Theory_notes.tex
+**"c:/Users/anyat/Documents/UI STUFFF/Master stuff/Semester 5/notes/Theory_notes"
+(c:/Users/anyat/Documents/UI STUFFF/Master stuff/Semester 5/notes/Theory_notes.tex
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-08-11>
 (c:/texlive/2023/texmf-dist/tex/latex/base/report.cls
@@ -31,31 +31,27 @@ File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
 ) (./Theory_notes.aux)
 \openout1 = `Theory_notes.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 13.
+(Font)              <12> on input line 14.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 13.
+(Font)              <8> on input line 14.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 13.
-
-
-LaTeX Warning: No \author given.
-
-[1
+(Font)              <6> on input line 14.
+ [1
 
 {c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 Chapter 1.
@@ -66,13 +62,42 @@ Overfull \hbox (3.60626pt too wide) in paragraph at lines 37--37
 
 [1
 
-] [2]
+]
+Overfull \hbox (6.72296pt too wide) in paragraph at lines 44--44
+[]\OT1/cmr/bx/n/14.4 Interactive Rec-om-mender Sys-tem via Knowl-
+ []
+
+
+Overfull \hbox (30.61185pt too wide) in paragraph at lines 47--48
+[]\OT1/cmr/m/n/10 https://towardsdatascience.com/introduction-to-reinforcement-learning-markov-
+ []
+
+[2{c:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+Overfull \hbox (9.16728pt too wide) in paragraph at lines 83--84
+\OT1/cmr/m/n/10 cor-re-spond-ingly up-dates its sub-se-quent rec-om-men-da-tion strat-egy based
+ []
+
+
+Overfull \hbox (22.49794pt too wide) in paragraph at lines 103--103
+[]\OT1/cmr/bx/n/14.4 Building Knowl-edge Graphs and Rec-om-mender
+ []
+
+[3] [4]
 Chapter 2.
-[3
+[5
 
 ]
 Chapter 3.
-[4
+[6
+
+]
+Chapter 4.
+
+Overfull \hbox (1.40784pt too wide) in paragraph at lines 131--131
+[]\OT1/cmr/bx/n/14.4 LightGCN: Sim-pli-fy-ing and Pow-er-ing Graph
+ []
+
+[7
 
 ] (./Theory_notes.aux)
  ***********
@@ -81,18 +106,18 @@ L3 programming layer <2023-08-11>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 485 strings out of 475188
- 9097 string characters out of 5767814
- 1921248 words of memory out of 5000000
- 21846 multiletter control sequences out of 15000+600000
- 563583 words of font info for 54 fonts, out of 8000000 for 9000
+ 493 strings out of 475189
+ 9313 string characters out of 5767835
+ 1925248 words of memory out of 5000000
+ 21851 multiletter control sequences out of 15000+600000
+ 563918 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 35i,6n,50p,394b,192s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on Theory_notes.pdf (5 pages, 86817 bytes).
+ 35i,6n,50p,579b,244s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on Theory_notes.pdf (8 pages, 105851 bytes).
 PDF statistics:
- 50 PDF objects out of 1000 (max. 8388607)
- 30 compressed objects within 1 object stream
+ 67 PDF objects out of 1000 (max. 8388607)
+ 42 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

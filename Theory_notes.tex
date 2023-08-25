@@ -9,6 +9,7 @@
 \documentclass{report}
 
 \title{Notes taking - Build is ctrl alt b}
+\author{Navey Mavey}
 \begin{document}
 \maketitle
 \chapter{Knowledge Graph}
@@ -33,14 +34,80 @@ A knowledge graph, also known as a semantic network, represents a network of rea
 
 
 
-\section{Combining Graph Neural Networks and Sentence Encoders for
-Knowledge-aware Recommendations}
+\section{Combining Graph Neural Networks and Sentence Encoders for Knowledge-aware Recommendations}
 - first exploited\textbf{ graph neural networks} to encode both \textbf{collaborative features}, such as the interactions between users and items, and structured properties of the items
 - Next, we used a\textbf{ sentence encoder} that relies on transformers to learn a representation based on textual content describing the items. 
 - Finally, these \textbf{embeddings are combined }by \textbf{exploiting a deep neural network }where both \textit{self-attention }and\textit{ cross-attention} mechanisms are used to learn the
 relationships between the initial embeddings and to further refine
 the representation
 
+\section{Interactive Recommender System via Knowledge Graph-enhanced Reinforcement Learning}
+\begin{itemize}
+    \item https://arxiv.org/pdf/2006.10389.pdf
+    \item https://towardsdatascience.com/introduction-to-reinforcement-learning-markov-decision-process-44c533ebf8da
+    \item Reinforce learning 
+    \begin{itemize}
+        \item a process in which an agent leans to make decision through trial and error
+        \item modelled mathematically as a Markox decision process
+        \item there is a learner and a decision maker called agent and the surrounding with which it interacts is called evironment
+        \item environment, in return, provides rewards and a new state based on the actions of the agent
+    \end{itemize}
+    
+    \item Q learning
+    \begin{itemize}
+        \item Q-learning finds an optimal policy in the sense of maximizing the expected value of the total reward over any and all successive steps, starting from the current state.
+   
+    \item Reinforcement learning in IRS 
+    
+         model based techniques -> utilize pol  -icy iteration to search for the optimal recommendation polcy where an action is defined to bean item and a state is represented as n-gram of items
+        \item  model free techniques
+    - more popular lately (including policy gradient based)
+    - pg based learn a stochastic policy as a distribution over the whole item space and sample an item according to such distribution
+\end{itemize}
+\item KGQR (Knowledge Graph Enhanched Q-Learning Framework for Interactive Recommendation)
+\begin{itemize}
+    \item integrate graph learning and sequential decision making as a whole to facilitate knowledge in KG and pattern mining in IRS
+    \item to alleviate data sparsity, the user feedback is modeled to propagte via strcture information of KG so tha the userÄs preference can be transited among correlateditems
+    \item This way one interctive record can affect multiple connected items, thus the sample efficiency is imporved
+    \item Aggregating the semantic correlations among items in KG, the item embedding and the user's preference are effectively represented -> leads to more accurate Q-value approximation
+
+    \item 4 main components
+    \begin{itemize}
+        \item graph convolution module
+        \item state representation module
+        \item candidate selection module
+        \item Q-learning network module
+    \end{itemize}
+        
+
+    \item at each timestep, the IRS squentially recommends item to user and correspondingly updates its subsequent recommendation strategy based on user's feedback
+    \item IRS models user's preferece via graph covolution module and state representation
+    \begin{itemize}
+        \item interaction history
+        \item knowledge graph
+    \end{itemize}
+        
+
+    \item state representation
+        - Graph convolutional embedding layer
+        -  Behavior aggregation layer
+    \end{itemize}
+\end{itemize}
+
+\section{Knowledge graph embedding based on semantic hierarchy}
+\begin{itemize}
+    \item The knowledge graph is mapped to a polar coordinate system, where concentric circles naturally reflect the hierarchy, and entities can be divided into modulus parts and phase parts, and then the modulus part of the polar coordinate system is mapped to the relational vector space through the relational vector, thus the modulus part takes into account the semantic information of the knowledge graph, and the phase part takes into account the hierarchical information.
+    \item 
+\end{itemize}
+
+\section{Building Knowledge Graphs and Recommender Systems for suggesting Reskilling and Upskilling Options from the Web}
+\begin{itemize}
+    \item the adaptation of knowledge extraction methods to the human resources and continuing education domain
+    \item developing a knowledge-driven recommender system that draws upon this background knowledge to support users in identifying useful reskilling and upskilling options
+    \item slot filling -> combines multiple pieces of information (eg. skills, learning outcomes) into a single knwledge base entries
+    \item When applied to open-world scenarios, slot
+    filling is very challenging, as demonstrated by competitions such as the TAC 2017 Cold Start Slot Filling Task in which even the winning systems only obtained F-measures below 20 \% 
+\end{itemize}
 
 \chapter{Natural Language Processing}
 - Rule based modelling of human language
@@ -58,5 +125,27 @@ the representation
 
 \chapter{Learning as a Network (LaaN)}
 builds upon connectivism, complexity theory, and double-loop learning. It promotes a theory of change, movement, dynamism, self-organization, emergence, and effectiveness, which puts the learner at the center and represents a knowledge ecological approach to learning. 
+
+
+\chapter{GCN}
+\section{LightGCN: Simplifying and Powering Graph Convolution Network for Recommendation}
+
+\begin{itemize}
+    \item 2 most common designs in GCNs, feature transformation and nonlinear activation, contributes little to the performance of collaborative fitlering, instead they add difficulty
+    \item simplify the design of GCN to make it more concise and appropriate for recommendation 
+    \item Basic idea: Collaborative filtering (matrix factorization, SVD++, Neural attentive item similarity (NAIS))
+    \item NGCF - deepens the use of subgraph structure with hughf-hop neighbours. 
+    \begin{itemize}
+        \item takes inspiration from GCN
+        \item follows propagation rule to refine embeddings
+        \item heavy and burdensome - not useful for CF
+        \item semi supervised node classification 
+        \begin{itemize}
+            \item each node has rich semantic features as input, such as the title and abstract words of a paper
+        \end{itemize}
+        \item 
+    \end{itemize}
+    \item LightGCN includes the most essential GCN component - Neighbourhood aggregation - for collaborative filtering
+\end{itemize}
 
 \end{document}
