@@ -128,13 +128,21 @@ builds upon connectivism, complexity theory, and double-loop learning. It promot
 
 
 \chapter{GCN}
+\section{Neural Graph Collaborative Filtering}
+\begin{itemize}
+    \item 2 componentsin learnable CF model
+    \begin{itemize}
+        \item embeddong - transforms users and items to vectorized representations
+        \item interaction modelling - reconstructs historical interactions based on the embedding
+    \end{itemize}
+\end{itemize}
 \section{LightGCN: Simplifying and Powering Graph Convolution Network for Recommendation}
 
 \begin{itemize}
     \item 2 most common designs in GCNs, feature transformation and nonlinear activation, contributes little to the performance of collaborative fitlering, instead they add difficulty
     \item simplify the design of GCN to make it more concise and appropriate for recommendation 
     \item Basic idea: Collaborative filtering (matrix factorization, SVD++, Neural attentive item similarity (NAIS))
-    \item NGCF - deepens the use of subgraph structure with hughf-hop neighbours. 
+    \item NGCF (Neural graph collaborative fitlering) - deepens the use of subgraph structure with huge-hop neighbours. 
     \begin{itemize}
         \item takes inspiration from GCN
         \item follows propagation rule to refine embeddings
@@ -143,9 +151,32 @@ builds upon connectivism, complexity theory, and double-loop learning. It promot
         \begin{itemize}
             \item each node has rich semantic features as input, such as the title and abstract words of a paper
         \end{itemize}
-        \item 
+        \item it works by propagating L layers,  nGCF obtains L+1 embedding to describe  user and an item
+        \item then it concatenates these L+1 embeddings to obtain the final user embedding and item embedding, using inner product to generate the prediction score
+        \item \(\sigma\) (not linear activation function) and feature transformation matrix W1 and W2 are not as useful in collaborative filtering
+        \item it might be useful in semi-suprevised learning for features learning (eg. of title and abstract words of a paper)
+        \item in collaborartive filtering each node of user item interaction graph only has an ID
     \end{itemize}
     \item LightGCN includes the most essential GCN component - Neighbourhood aggregation - for collaborative filtering
+    \item BASIC IDEA : learn representation for nodes by sommthing features over the graph $$ e_{u}^{kt1} = AGG(e_u^{(k)},\{e_i^{(k)}:i\in \mathcal{N}_u\})$$
+    \item AGG : aggregation function - considers the kth layer's representation 
+    \item we aggretgate only the connected neighbours and not the target node itself (self connection) since the layer combination operation essentially does the same thing
+    \item Layer combination and model prediction - ak is importance of the kth layer embedding -> treated as hyperparameter
+    \item Perfomance comparison with NGCF
+    \begin{itemize}
+        \item in all cases Light GCN outperforms NGCF by a large margin.
+        \item increasing the number of layers can improve the performance but the benerfit diminish -> using 3 layers leads to satisfactory performance in most cases
+        \item LightGCN fits training data better than NGCF (lower training loss)
+        \item  even comparing with state of the art (see table) its still better
+        \item even using 4 layers, the performan e does not degrade
+    \end{itemize}
 \end{itemize}
+ \section{Interest-aware Message-Passing GCN for Recommendation}
+ \begin{itemize}
+    \item to tackle over-smoothing problem in LightGCN in the domain of recommendation
+    \item existing GCN-based recommendation models have not distinguished the high-order neighbors, and just simply aggregate the messages from all those neighbors to update user embeddings. 
+    \item As a result, the embeddings of dissimilar users are also involved in the embedding learning of a target user, negatively affecting the performance.
+    \item result graph: LightGCN gets worse aas the number of layers increases whereas IMP-GCN does not
+ \end{itemize}
 
 \end{document}
