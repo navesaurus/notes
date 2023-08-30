@@ -109,6 +109,113 @@ the representation
     filling is very challenging, as demonstrated by competitions such as the TAC 2017 Cold Start Slot Filling Task in which even the winning systems only obtained F-measures below 20 \% 
 \end{itemize}
 
+\section{Knowledge Graph Convolutional Networks for Recommender Systems}
+\begin{itemize}
+    \item we propose a knowledge graph convolutional netwrok (KGCN) - end to end framework that captures inter-tiem relatedness effectively by mining their associated attributes on KG 
+    \item a recent study talks about that attributes are not isolated but linked up with each other, which forms knowledge graph
+    \item benefit of incorperating KG into recommendation benefit
+    \begin{itemize}
+        \item rich semantic relatedness among items in a KG can help explore their latent connections and improve the precision of results
+        \item various types of relation in a KG are helpful for extending a user's interests reasonably and increasing the diversity of recommended items
+        \item KG connects a user's historically-liked and recommended items, thereby bringing explainability to recommender system and increasing the diversity of recommended items
+        \item KG connects a user's historically liked and recommended items, thereby bringing explainability to recommender system.
+    \end{itemize}
+    \item idea of KGCN - aggregate and incorporate neighbourhood information with bias when calculating the representation of a given entity in the KG
+    \item three types of aggregators
+    \begin{itemize}
+        \item sum aggregator $$ agg_{sum} = \sigma (W \cdot (v+v^u_{S(v)})+b)$$
+        \item concat aggregator   $$ agg_{concat} = \sigma (W \cdot concat(v,v^u_{S(v)})+b)$$
+        \item neighbor aggregator  $$ agg_{neighbour} = \sigma (W \cdot v^u_{S(v)}+b)$$
+    \end{itemize}
+    \item Results 
+    \begin{itemize}
+        \item KGCN can well address sparse scenarios
+        \item neighbour sampling size is best at K=4 or 8
+        \item depth of receptive field is best at 1 or 2
+    \end{itemize}
+\end{itemize}
+
+\section{Attentional Graph Convolutional Networks for Knowledge Concept Recommendation in MOOCs in a Heterogeneous View}
+\begin{itemize}
+    \item for knowledge concept recommendation in MOOCs 
+    \item we look into ACKRec but it suffers from sparsity issue so we use attention based CGN to learn the representation of different entities
+    \item considering other type of entities and construct a Heterogeneous information network to capture the corresponding fruitful semantic relationships among diffenet types of entities and incorporate them into the representation learning process
+    \item PROBLEM STATEMENT: curren MOOCs recommendation might overlook students' interest to specific knowledge concepts (eg. computer vision courses taught by different instructors may be quite different in a microscopic views)
+    \item benefit of heterogeneous relationships system 
+    \begin{itemize}
+        \item semantic relatedness among knowledge concepts can be introduced and help to identify the latent interaction
+        \item user's interests can be rasonably extended and the diversity of recommended knowledge concet can be increased
+        \item user's interest can be interpreted by tracking a user's historical records along these relationships.
+        \begin{itemize}
+            \item use meta paths as the guidance to capture the heterogeneous context information in a HIN via GCN
+        \end{itemize}
+    \end{itemize}
+    \item System architecture
+    \begin{itemize}
+        \item feature extraction
+        \begin{itemize}
+            \item content feature - generate the word embedding of the name of the knowledge concept and use it as a content feature for knowledge concept
+            \item context feature - word embedding of knowledge concept names can be used to represent information of a knowledge concept
+        \end{itemize}
+        \item meta-path selection
+        \begin{itemize}
+            \item We model MOOCs data as HIN including 5 entities (user(U), course(C), video(V), teacher (T), knowledge concept (K))
+            \item Network schema - represent semantic and relations information comprenehsively in the MMOCs dataset
+            \item Meta-path - describes a composite relation between object \(N\) and  \(N_{l+1}\)
+        \end{itemize}
+        \item representation learning of heterogeneous entities - proprsed to learn the lower dimensional representations of the entities in a heterogeneous view
+        \item Rating prediction - dense vectors of entities are fed to an extended matrix factorization to learn the parameters of the model
+    \end{itemize}
+\end{itemize}
+
+\section{Recommending Knowledge Concepts on MOOC Platforms with Meta-path-based Representation Learning}
+\begin{itemize}
+    \item focuses on  task of remmoending knowledge concets of interest to users, which is challenging due to the sparsit of user-concept interactions given a large number of concepts. We discuss HIN to learn user and concept representations using GCN based on user-user and concept-concept relationships via meta-paths
+    \item understanding a user's learning needs from a micoscopic view and predicting knowledge concepts that the user might be interested in are important
+    \item Based on different indirect paths chosen, we can derive various user (concept) representations, and those representations of users (concepts) regarding different paths can be aggregated, e.g., using the mean of those representations.
+    \item contribution in this works
+    \begin{itemize}
+        \item an end-to-end framework for predicting and recommending knowledge concepts of auer's interestinvestigate 2 attention mechanisms for aggregating information from different meta-paths to dervie user and cencept representations
+        \item we evaluate our approach with several baselines and state-of-the-art approaches in terms of well-established evaluation metrics
+    \end{itemize}
+    \item related work
+    \begin{itemize}
+        \item YouEDU - pipeline for classifying MOOC forum posts and recommending instructional video clips that might be helpful to reseove the confusion
+        \item LeCORe - exploits user interest modelling for recommendig courses as well as similar users for promoting peer learnign in enterprise environment
+        \item to use recommendation with HIN - using pre-trained user and item embedings based on meta-path infromation with random walk
+        \item in this paper, 
+        \begin{itemize}
+            \item they formulate interacted concepts for each user as implicit feedback while treated the number of clicks as ratings and formulated the problem as rating prediction for recommending top-k unkown concepts with highr ratings
+            \item investigate different attention mechanism including the one incorporating the latent features of users(items) from matrix factorization
+        \end{itemize} 
+    \end{itemize}
+    \begin{itemize}
+        \item proposed approach (MOOCIR - MOOC Interest Recommender)
+        \item We extend the MF with user (concept) representations/embeddings that are learned by applying GCNs to meta-path-based-Graphs
+        \item Meta-path selection
+        \begin{itemize}
+            \item for each meta path. a homogeneous graph with respect to users(concepts) can be extracted, which is depicted as its corresponding adjacency matrix
+        \end{itemize}
+        \item GCNs
+        \begin{itemize}
+            \item learn the representation for each meta-path
+            \item the output representarion of the last layer can be used as user(concept) representation
+        \end{itemize}
+        \item Attentions
+        \begin{itemize}
+            \item attention mechanism is motivated by how we pay visual attention to different regions of an image or relevant words in one sentence.
+            \item Different meta-paths can have different importance with resepect to each user
+            \item incorporating the importance with resepct to each user and incorporating the importance of each meta path differently for each user can be beneficial when aggregating user represantations from different meta paths.
+        \end{itemize}
+        \item prediction
+    \end{itemize}
+    \item evaluation
+    \begin{itemize}
+        \item Evaluation matrix - Hit ratio of top-k concepts (HR@k), Normalised discounted cumuative gain (nDCG@k), Mean reciprocal rank (MRR)
+    \end{itemize}
+\end{itemize}
+
+
 \chapter{Natural Language Processing}
 - Rule based modelling of human language
 \section{Tasks}
@@ -135,6 +242,13 @@ builds upon connectivism, complexity theory, and double-loop learning. It promot
         \item embeddong - transforms users and items to vectorized representations
         \item interaction modelling - reconstructs historical interactions based on the embedding
     \end{itemize}
+    \item most embedding function lacks an explicit encoding of the crucial collabotaritve signal(important in user-item interaction to reveal the behavioral similarity between users)
+    \item we tackle this problem by exploiting high-order connectivity from user-item interaction
+    \item a neural network method to propagate embeddings recursively on the graph. By stacking multiple embedding prpagation layers, we can enforce the embeddings to capüture the collaborative signal in high-order connectivities (eg stacking 4 layers we get \(u_1 \leftarrow i_2 \leftarrow u_2 \leftarrow i_4 \)
+    \item Discussion
+    \begin{itemize}
+        \item NGCF generalises SVD++ as SVD++ is a special case of NGCF with no high-order proagation layer
+    \end{itemize}
 \end{itemize}
 \section{LightGCN: Simplifying and Powering Graph Convolution Network for Recommendation}
 
@@ -156,6 +270,7 @@ builds upon connectivism, complexity theory, and double-loop learning. It promot
         \item \(\sigma\) (not linear activation function) and feature transformation matrix W1 and W2 are not as useful in collaborative filtering
         \item it might be useful in semi-suprevised learning for features learning (eg. of title and abstract words of a paper)
         \item in collaborartive filtering each node of user item interaction graph only has an ID
+       
     \end{itemize}
     \item LightGCN includes the most essential GCN component - Neighbourhood aggregation - for collaborative filtering
     \item BASIC IDEA : learn representation for nodes by sommthing features over the graph $$ e_{u}^{kt1} = AGG(e_u^{(k)},\{e_i^{(k)}:i\in \mathcal{N}_u\})$$
